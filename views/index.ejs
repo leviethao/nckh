@@ -1,0 +1,62 @@
+<% extend("layout") %>
+<div id='news-feed'>
+  <div id='select-post-category-option'>
+    <button id='post-category-1' class='btn btn-primary post-category' type='submit'>Cung cấp</button>
+    <button id='post-category-2' class='btn btn-primary post-category' type='submit'>Cần tìm</button>
+  </div>
+    
+  <div id='create-post'>
+    <form method='POST' action='/catalog/post_submit'>
+      <div>
+        Đăng tin | <a href='#'>Ảnh/video</a> | <a href='#'>Tệp</a>
+      </div>
+      
+      <div>
+        <textarea class="form-control" rows="5" name='content' placeholder='Nội dung đăng ...'></textarea>
+      </div>
+      <div>
+        <textarea class="form-control" rows="5" name='condition' placeholder='Điều kiện ...'></textarea>
+      </div>
+      
+      <div class='float-left'>
+        Thể loại: 
+          <select>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+          </select>
+            
+      </div>
+      <button id='post-button' class='btn btn-primary float-right' type='submit'>Đăng</button>
+      <div class='clear-both'></div>
+    </form>
+    
+  </div>
+    
+  <div class='post'>
+      <div class='post-info'>
+        <a href='#' class='float-left'><img src='/images/avatar.png' /></a>
+        <div class='float-left'>
+          <div id='poster'>Poster name</div>
+          <div id='created'>20/4/2018</div>
+        </div>
+      </div>
+      <div class='clear-both'></div>
+  
+      <div class='post-content'>
+        <P>NGƯỜI THẦY VÀ COMPA
+          
+          Khi nhắc đến hình ảnh người thầy, người ta thường ví là “những kỹ sư tâm hồn” hay “người đưa đò”,... Nhưng hôm nay tôi được nghe một hình ảnh rất mới về người thầy, đó là người thầy như chiếc compa… !!!
+          Chiếc compa có 2 bộ phận chính là thanh đầu nhọn và thanh đầu chì gắn chặt vào nhau. Thanh nhọn làm trụ, xác định tâm cho chính xác và vững vàng để thanh chì tựa vào mà vẽ nên các đường tròn với các bán kính lớn nhỏ khác nhau. 
+          Người thầy cũng vậy phải có cái tâm, cái đức làm chính, để là điểm tựa cho cái tài, cái tri thức, cái chuyên môn thực hiện công việc cao cả là dạy dỗ, đào tạo các em học sinh nên hoàn thiện, nên “tròn trịa” về nhân cách, đạo đức và tri thức. Mỗi hình tròn dù lớn bé khác nhau là do bán kính, các em học sinh cũng vậy, mỗi em tùy vào khả năng, năng lực của mình mà thành công ở mỗi lĩnh vực khác nhau. Chẳng hạn có những em thì thành kỹ sư, bác sĩ như là các hình tròn lớn, những em khác là nông dân hay công nhân, có thể là những hình tròn nhỏ hơn, nhưng cái chính là người thầy phải giáo dục các em thành những con người đạo đức, nhân cách và sống có ích cho bản thân, gia đình và xã hội.</P>
+      </div>
+  
+      <div class='exchange-condition'>
+        Điều kiện trao đổi: &nbsp;
+      </div>
+  
+      <div class='post-interactive'>
+        <button class='btn btn-primary comment-button' type='submit'>Bình luận</button>
+      </div>
+    </div>

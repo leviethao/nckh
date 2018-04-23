@@ -1,0 +1,88 @@
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-collapse {
+  position: fixed
+}
+
+.collapse {
+  position: fixed
+}
+
+body {
+  background-color: #EDF0F5;
+}
+
+#create-account-form {
+  width: 20%;
+  margin: auto
+}
+
+h1#title {
+  text-align: center
+}
+
+#news-feed {
+  max-width: 50%;
+  margin: auto
+}
+
+/*================= POST ==============*/
+
+#create-post {
+  padding-bottom: 20px;
+}
+
+#post-button {
+  float: right;
+}
+
+.post {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.post .post-interactive {
+}
+
+#select-post-category-option {
+  
+}
+
+.post-category {
+  width: 50%;
+}
+
+#post-category-1 {
+  float: left;
+}
+
+#post-category-2 {
+  float: right;
+}
+
+.post-content {
+  text-align: justify;
+}
+
+/* =========== comment ===============*/
+.comment-button {
+  width: 100%;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
