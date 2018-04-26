@@ -18,7 +18,7 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var dev_db_url = 'mongodb://127.0.0.1/nckhdb';
+var dev_db_url = 'mongodb://admin1:admin1@ds239638.mlab.com:39638/nckhdb';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 var db = mongoose.connection;

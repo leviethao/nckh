@@ -2,11 +2,11 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
     name: {type: String, required: true, max: 100},
-    gender: {type: String},
-    avatar: {type: String, default: "default avatar link"},
-    date_of_birth: {type: Date},
-    address: {type: String},
-    phone_number: {type: String}
+    gender: {type: String, default: "Nam"},
+    avatar: {type: String, default: "/images/avatar.png"},
+    date_of_birth: {type: Date, default: new Date(1997, 12, 17)},
+    address: {type: String, default: ""},
+    phone_number: {type: String, default: ""}
 });
 
 //Virtual for user's url

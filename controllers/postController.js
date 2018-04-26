@@ -1,5 +1,6 @@
 var Post = require('../models/post');
 var Account = require("../models/account");
+var User = require("../models/account");
 
 var async = require("async");
 var {body, validationResult} = require("express-validator/check");
@@ -7,11 +8,31 @@ var {sanitizeBody} = require("express-validator/filter");
 
 
 //Dislay home page
-exports.index = function (req, res) {
+exports.index = function (req, res, next) {
     if (req.isAuthenticated() == false) {
         res.redirect("/login");
+        return;
     }
-    res.render("index", {title: "Trang chủ"});
+
+    async.parallel({
+        account: function (callback) {
+            User.findOne()
+            .where("loginname").equals(req.session.passport.user)
+            .populate("user")
+            .exec(callback);
+        },
+        posts: function (callback) {
+            Post.find()
+            .populate("poster")
+            .exec(callback)
+        }        
+    }, function (err, results) {
+        if (err) {
+            return next(err);
+        }
+
+        res.render("index", {title: "Trang chủ", posts: results.posts, user: results.account.user});
+    });
 }
 
 // Display list of all post.
@@ -68,7 +89,6 @@ exports.post_submit = [
             if (account != null) {
 
                 let post = new Post({
-                    created_p: new Date().toLocaleString(), // get current time and date
                     content_p: req.body.content,
                     exchange_condition: req.body.condition,
                     poster: account.user._id,
@@ -85,6 +105,8 @@ exports.post_submit = [
                     post.save(function (err) {
                         if (err) {return next(err);}    
                     });
+
+                    res.redirect("/catalog");
                 }
         
             }

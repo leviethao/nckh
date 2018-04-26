@@ -69,7 +69,7 @@ exports.account_create_post = [
                 account.save(function (err) {
                     if (err) {return next(err);}
                     //successful - redirect to new account record
-                    res.redirect(account.url);
+                    res.render("create_account_success", {title: "Tạo tài khoản mới"});
                 });
             });
         }
