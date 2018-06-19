@@ -1,18 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang='vi'>
     <head>
-        <meta charset='utf-8' />
         <title>Login</title>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
     </head>
     <body>
-        <form class='' action='/login' method='post'>
-            <input type='text' name='username' placeholder="Username" />
-            <input type='password' name='password' placeholder="Password"/>
-            <input type='submit' name='' value='Login'/>
-        </form>
-
-        <div stypesheet='margin-top: 100px;'>
-            Bạn chưa có tài khoản? &nbsp; <a href='/catalog/account/create'> Tạo tài khoản </a>
+        <div id='loggedout-menubar-container'>
+            <div class='float-left' style='padding-top: 5px;'>
+                <span id='logo-text'>Share Learning Tools</span>
+            </div>
+            <div id='login-form'>
+                <form class='' action='/login' method='post'>
+                    <table>
+                        <tr>
+                            <td><input class='form-control' type='text' name='username' placeholder="Tên đăng nhập" /></td>
+                            <td><input class='form-control' type='password' name='password' placeholder="Mật khẩu"/></td>
+                            <td><button class='btn btn-primary' type='submit'>Đăng nhập</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
+        <div class='clear-both'></div>
+
+        <div id='content'>
+            <div class='float-left'>
+
+            </div>
+            <div id='create-account-form'>
+                    <h2>Tạo tài khoản mới</h2>
+                    <form method='POST' action=''>
+                        <div class='form-group'>
+                            <input id='username' class='form-control' type='text' name='username' value='' placeholder='Tên người dùng' required/>
+                        </div>
+                        <div class='form-group'>
+                            <input id='loginname' class='form-control' type='text' name='loginname' value='' placeholder='Tên đăng nhập' required/>
+                        </div>
+                        <div class='form-group'>
+                            <input id='password' class='form-control' type='password' name='password' value='' placeholder='Mật khẩu mới' required />
+                        </div>
+                        <div class='form-group'>
+                            <input id='confirm_password' class='form-control' type='password' name='confirm_password' value='' placeholder='Xác nhận mật khẩu' required oninput='checkComfirmPassword(this)'/>
+                        </div>
+                        
+                        <button class='btn btn-primary' type='submit'>Tạo tài khoản</button>
+                    </form>
+                </div>
+            
+        </div>
+        
     </body>
 </html>
